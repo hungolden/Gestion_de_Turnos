@@ -1,0 +1,2 @@
+Estas son las migraciones que se fueron aplicando durante el desarrollo.
+NO hace falta ejecutarlas si se usa ../gestion_de_turnos.sql, que ya las incluye.

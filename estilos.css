@@ -1,0 +1,327 @@
+/* ==========================================================================
+   Gestión de Turnos - estilos globales
+   Paleta sobria, foco en legibilidad y consistencia entre pantallas.
+   ========================================================================== */
+
+:root {
+  --bg: #eef1f4;
+  --surface: #ffffff;
+  --text: #2b303b;
+  --text-muted: #667085;
+  --border: #dde1e6;
+  --primary: #3a5a78;
+  --primary-dark: #2c4a63;
+  --danger: #a8433c;
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 1.25rem 0 .75rem;
+}
+
+p {
+  margin: .5rem 0 1rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.25rem 0;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Barra superior (menu_interior / menu_interior1 / index) ---------- */
+
+.topbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: .9rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  order: 1;
+}
+
+.topbar h1 a {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.topbar h1 a:hover {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.session-info {
+  order: 2;
+  margin: 0;
+  font-size: .88rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.session-info strong {
+  color: var(--text);
+}
+
+.session-info a {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.navmenu {
+  order: 3;
+  flex-basis: 100%;
+}
+
+.navmenu ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin: .5rem 0 0;
+  padding: 0;
+}
+
+.navmenu li {
+  display: inline;
+}
+
+.navmenu a {
+  display: inline-block;
+  padding: .4rem .75rem;
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+
+.navmenu a:hover {
+  background: var(--bg);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* ---------- Contenedores de contenido ---------- */
+
+main.container {
+  max-width: 1100px;
+  margin: 1.75rem auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+}
+
+main.container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+main.auth-box {
+  max-width: 380px;
+  margin: 4.5rem auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, .06);
+}
+
+main.auth-box h1 {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 0;
+}
+
+/* ---------- Formularios ---------- */
+
+form h3 {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 1.1rem 0 .35rem;
+}
+
+form h3:first-of-type {
+  margin-top: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  padding: .5rem .65rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: .95rem;
+  color: var(--text);
+  background: #fff;
+}
+
+form select {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  padding: .5rem .65rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: .95rem;
+  color: var(--text);
+  background: #fff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="number"]:focus,
+form select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(58, 90, 120, .15);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--primary);
+  margin-right: .4rem;
+}
+
+form label {
+  font-size: .95rem;
+}
+
+/* La barra de búsqueda de los listados ya trae width:100% inline;
+   solo la acompañamos con el mismo look que el resto de los inputs. */
+input[name="buscar"] {
+  padding: .5rem .65rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: .95rem;
+  background: #fff;
+}
+
+/* ---------- Botones ---------- */
+
+input[type="submit"] {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: .55rem 1.3rem;
+  border-radius: var(--radius);
+  font-size: .95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: .5rem;
+}
+
+input[type="submit"]:hover {
+  background: var(--primary-dark);
+}
+
+button {
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: .45rem 1rem;
+  border-radius: var(--radius);
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--bg);
+  border-color: #c4cad3;
+}
+
+/* ---------- Tablas de listados ---------- */
+
+table.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.25rem;
+  font-size: .92rem;
+}
+
+table.table th,
+table.table td {
+  padding: .6rem .7rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+table.table th {
+  background: #f8f9fb;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+table.table-striped tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+table.table-hover tr:hover td {
+  background: #f1f4f8;
+}
+
+table.table td button {
+  margin-right: .35rem;
+}
+
+table.table td button:last-child {
+  margin-right: 0;
+}

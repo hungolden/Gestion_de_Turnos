@@ -1,0 +1,16 @@
+/* Estilos propios de la pantalla del especialista (se suman a ../estilos.css) */
+.filtros { display: flex; flex-wrap: wrap; gap: .5rem .75rem; align-items: center; margin-bottom: 1rem; }
+.filtros input[type="date"], .filtros select { display: inline-block; width: auto; }
+form.inline { display: flex; gap: .4rem; align-items: center; margin: 0; }
+form.inline select { display: inline-block; width: auto; padding: .3rem .5rem; }
+form.inline button { padding: .35rem .8rem; }
+.estado { display: inline-block; padding: .1rem .6rem; border-radius: 999px; font-size: .8rem; font-weight: 600; background: #e8edf2; color: #2b303b; }
+.est-Confirmado { background: #e3edf7; color: #2c4a63; }
+.est-Retrasado  { background: #fdf0d5; color: #8a5a00; }
+.est-Asistido   { background: #e2f3e6; color: #1f6b34; }
+.est-Finalizado { background: #d9ece8; color: #17635a; }
+.est-Cancelado  { background: #f6e2e0; color: #a8433c; }
+.aviso-ok  { color: #1f6b34; margin: 0 0 1rem; }
+.aviso-err { color: #a8433c; margin: 0 0 1rem; }
+tr.mio td { font-weight: 600; }
+form.inline select:disabled, form.inline button:disabled { opacity: .5; cursor: not-allowed; }
